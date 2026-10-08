@@ -11,10 +11,10 @@ fecha: venta.fecha
 const [estudiantes, setEstudiantes] = useState([]);
 const [productos, setProductos] = useState([]);
 useEffect(() => {
-axios.get('http://localhost:3000/estudiantes')
+axios.get('https://cafeteria-backend1.onrender.com')
 .then(res => setEstudiantes(res.data))
 .catch(err => console.error(err));
-axios.get('http://localhost:3000/productos')
+axios.get('https://cafeteria-backend1.onrender.com')
 .then(res => setProductos(res.data))
 .catch(err => console.error(err));
 }, []);
@@ -26,7 +26,7 @@ setFormData({
 };
 const handleSubmit = (e) => {
 e.preventDefault();
-axios.put(`http://localhost:3000/ventas/${venta.id}`, formData)
+axios.put(`https://cafeteria-backend1.onrender.com/ventas/${venta.id}`, formData)
 .then(res => {
 alert(res.data.message);
 onUpdate(); // refresca la lista de ventas
