@@ -11,10 +11,10 @@ fecha: venta.fecha
 const [estudiantes, setEstudiantes] = useState([]);
 const [productos, setProductos] = useState([]);
 useEffect(() => {
-axios.get('https://cafeteria-backend1.onrender.com')
+axios.get('https://cafeteria-backend1.onrender.com/estudiantes')
 .then(res => setEstudiantes(res.data))
 .catch(err => console.error(err));
-axios.get('https://cafeteria-backend1.onrender.com')
+axios.get('https://cafeteria-backend1.onrender.com/productos')
 .then(res => setProductos(res.data))
 .catch(err => console.error(err));
 }, []);

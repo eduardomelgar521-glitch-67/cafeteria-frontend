@@ -12,10 +12,10 @@ const [estudiantes, setEstudiantes] = useState([]);
 const [productos, setProductos] = useState([]);
 // Cargar listas de estudiantes y productos al iniciar
 useEffect(() => {
-axios.get('https://cafeteria-backend1.onrender.com')
+axios.get('https://cafeteria-backend1.onrender.com/estudiantes')
 .then(res => setEstudiantes(res.data))
 .catch(err => console.error(err));
-axios.get('https://cafeteria-backend1.onrender.com')
+axios.get('https://cafeteria-backend1.onrender.com/productos')
 .then(res => setProductos(res.data))
 .catch(err => console.error(err));
 }, []);
@@ -27,7 +27,7 @@ setFormData({
 };
 const handleSubmit = (e) => {
 e.preventDefault();
-axios.post('https://cafeteria-backend1.onrender.com', formData)
+axios.post('https://cafeteria-backend1.onrender.com/ventas', formData)
 .then(res => {
 alert(res.data.message);
 setFormData({ estudiante_id: '', producto_id: '', cantidad: '',
